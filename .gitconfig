@@ -1,0 +1,28 @@
+[user]
+    email = theo.biasutto-lervat@inria.fr
+    name = Théo BL
+
+[alias]
+    graph = log --graph --pretty=format:'%C(yellow)%h%Creset -%Cred%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate
+
+[diff]
+    tool = nvimdiff
+
+[difftool]
+    prompt = true
+
+[difftool "nvdimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+
+[merge]
+    ff = false
+    conflictstyle = diff3
+    tool = nvimdiff
+    toolprompt = false
+
+[pull]
+    rebase = true
+
+[push]
+    default = simple
+    followTags = true
