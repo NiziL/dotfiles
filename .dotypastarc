@@ -1,0 +1,6 @@
+dotypasta = [".dotypastarc"]
+zsh = [".zshrc", ".oh-my-zsh/custom/alias.zsh", ".oh-my-zsh/custom/varenv.zsh", ".oh-my-zsh/custom/themes/nizil.zsh-theme", ".oh-my-zsh/custom/plugins/ranger/ranger.plugin.zsh"]
+i3 = [".config/i3/config", ".config/i3blocks/config"]
+rofi = [".config/rofi/config.rasi"]
+vi = [".config/nvim/init.vim"]
+

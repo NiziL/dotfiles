@@ -1,0 +1,39 @@
+# i3blocks config file
+
+command=$HOME/.config/i3blocks/$BLOCK_NAME/$BLOCK_NAME
+separator_block_width=15
+markup=pango
+
+### Volume indicator
+#[volume-pulseaudio]
+#interval=persist
+#SUBSCRIBE=1
+#USE_ALSA_NAME=1
+
+## Network interface monitoring
+# Ethernet
+[iface]
+color=#00FF00
+label=eth:
+IFACE=ethusb0
+interval=10
+separator=false
+# Wifi
+[iface]
+color=#00FF00
+IFACE=wlan0
+label=wifi:
+interval=10
+
+# CPU usage
+[cpu_usage2]
+interval=persist
+
+# Calendar
+[calendar]
+interval=1
+
+# Battery indicator
+[battery2]
+interval=30
+
