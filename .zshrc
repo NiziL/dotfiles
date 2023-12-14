@@ -9,7 +9,7 @@ plugins=(
     # completion
     git docker
     # python related
-    python virtualenv pip 
+    virtualenv pip 
     # theme prompt dependencies
     git-prompt ranger 
 )
