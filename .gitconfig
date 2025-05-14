@@ -14,11 +14,8 @@
 [difftool "nvdimdiff"]
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 
-[merge]
-    ff = false
-    conflictstyle = diff3
-    tool = nvimdiff
-    toolprompt = false
+[init]
+    defaultBranch = main
 
 [pull]
     rebase = true
@@ -26,3 +23,13 @@
 [push]
     default = simple
     followTags = true
+    autoSetupRemote = true
+
+[merge]
+    ff = false
+    conflictstyle = diff3
+    tool = nvimdiff
+    toolprompt = false
+
+[branch]
+    autoSetupMerde = simple

@@ -1,4 +1,6 @@
 configuration {
+    terminal: "alacritty";
+
     modes: [ combi ];
     combi-modes: [ drun, ssh, window ];
     show-icons: true;

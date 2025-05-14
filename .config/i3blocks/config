@@ -1,6 +1,6 @@
 # i3blocks config file
 
-command=$HOME/.config/i3blocks/$BLOCK_NAME/$BLOCK_NAME
+#command=$HOME/.config/i3blocks/$BLOCK_NAME/$BLOCK_NAME
 separator_block_width=15
 markup=pango
 
@@ -12,21 +12,21 @@ markup=pango
 
 ## Network interface monitoring
 # Ethernet
-[iface]
-color=#00FF00
-label=eth:
-IFACE=ethusb0
-interval=10
-separator=false
+#[iface]
+#color=#00FF00
+#label=eth:
+#IFACE=enxac91a1d418d2
+#interval=10
+#separator=false
 # Wifi
-[iface]
-color=#00FF00
-IFACE=wlan0
-label=wifi:
-interval=10
+#[iface]
+#color=#00FF00
+#IFACE=wlp0s20f3
+#label=wifi:
+#interval=10
 
 # CPU usage
-[cpu_usage2]
+[cpu_usage]
 interval=persist
 
 # Calendar
@@ -34,6 +34,6 @@ interval=persist
 interval=1
 
 # Battery indicator
-[battery2]
+[battery]
 interval=30
 

@@ -1,4 +1,4 @@
-alias wifi="iwctl station wlan0"
-alias backlight="xrandr --output eDP-1 --brightness"
-alias mkenv="python -m venv .venv"
-alias srcenv="source .venv/bin/activate"
+alias ls='lsd'
+alias ranger='rr'
+alias cat='bat'
+alias wifi='iwctl station wlan0'
