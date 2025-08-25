@@ -150,10 +150,6 @@ bindsym $mod+Ctrl+l move workspace to output right
 bindsym $mod+Ctrl+Left move workspace to output left
 bindsym $mod+Ctrl+Right move workspace to output right
 
-bar {
-    i3bar_command $HOME/.config/polybar/launch.sh
-}
-
 # Borderless
 default_border pixel 2
 
