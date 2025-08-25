@@ -1,0 +1,7 @@
+#! /bin/sh
+
+WP_DIR="/home/tbiasutt/Pictures/Wallpapers"
+
+feh --bg-scale "$WP_DIR/cthulhu.jpg" "$WP_DIR/waves_left.png" "$WP_DIR/waves_right.png"
+
+/home/tbiasutt/.config/polybar/launch.sh
