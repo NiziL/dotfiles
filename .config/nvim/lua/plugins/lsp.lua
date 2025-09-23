@@ -2,7 +2,7 @@ return {
     "neovim/nvim-lspconfig", 
     cond = not vim.g.vscode,
     config = function()
-        lsp = require("lspconfig")
-        lsp.ruff.setup{}
+        vim.lsp.enable('ruff')
+        vim.lsp.enable('ty')
     end
 }
