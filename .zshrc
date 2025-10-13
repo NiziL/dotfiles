@@ -4,11 +4,13 @@ ZSH_THEME="nizil"
 
 plugins=(
     # utils 
-    ssh-agent thefuck
+    ssh-agent thefuck iwd ranger usb
     # completion
     docker uv nvm rust
     # theme dependencies
-    git-prompt virtualenv ranger 
+    git-prompt virtualenv 
 )
+
+zstyle :omz:plugins:ssh-agent lazy yes
 
 source $ZSH/oh-my-zsh.sh
