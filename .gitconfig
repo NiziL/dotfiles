@@ -2,20 +2,26 @@
     email = theo.biasutto-lervat@inria.fr
     name = Théo BL
 
+[core]
+    pager = delta
+
 [alias]
     graph = log --graph --pretty=format:'%C(yellow)%h%Creset -%Cred%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate
 
-[diff]
-    tool = nvimdiff
+[interactive]
+    diffFilter = delta --color-only
 
-[difftool]
-    prompt = true
-
-[difftool "nvdimdiff"]
-    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[delta]
+    navigate = true
+    dark = true
+    side-by-side = true
+    line-numbers = true
 
 [init]
     defaultBranch = main
+
+[branch]
+    autoSetupMerge = simple
 
 [pull]
     rebase = true
@@ -27,9 +33,5 @@
 
 [merge]
     ff = false
-    conflictstyle = diff3
-    tool = nvimdiff
-    toolprompt = false
+    conflictstyle = zdiff3
 
-[branch]
-    autoSetupMerde = simple
