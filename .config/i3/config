@@ -182,4 +182,4 @@ bindsym --release $mod+p exec --no-startup-id $HOME/.local/bin/screenshot
 ## picom
 exec --no-startup-id picom --daemon
 ## autorandr
-exec --no-startup-id autorandr -c --force
+exec_always --no-startup-id autorandr -c --force
