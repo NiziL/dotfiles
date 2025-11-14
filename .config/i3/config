@@ -9,19 +9,16 @@ font pango:SauceCodePro NFM 10
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# Lock screen
-bindsym $mod+Escape exec --no-startup-id "i3lock --image=/home/tbiasutt/Pictures/Wallpapers/lock.png --nofork"
-
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec alacritty
 
 # kill focused window
-bindsym $mod+Shift+a kill
+bindsym $mod+Shift+q kill
 
 # start rofi
 bindsym $mod+d exec --no-startup-id "rofi -show drun" 
-bindsym $mod+w exec --no-startup-id "rofi -show window" 
+#bindsym $mod+w exec --no-startup-id "rofi -show window" 
 
 # change focus
 bindsym $mod+h focus left
@@ -58,7 +55,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+z layout tabbed
+bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -68,7 +65,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+q focus parent
+bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -87,28 +84,28 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+ampersand workspace number $ws1
-bindsym $mod+eacute workspace number $ws2
-bindsym $mod+quotedbl workspace number $ws3
-bindsym $mod+apostrophe workspace number $ws4
-bindsym $mod+parenleft workspace number $ws5
-bindsym $mod+minus workspace number $ws6
-bindsym $mod+egrave workspace number $ws7
-bindsym $mod+underscore workspace number $ws8
-bindsym $mod+ccedilla workspace number $ws9
-bindsym $mod+agrave workspace number $ws10
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+ampersand move container to workspace number $ws1
-bindsym $mod+Shift+eacute move container to workspace number $ws2
-bindsym $mod+Shift+quotedbl move container to workspace number $ws3
-bindsym $mod+Shift+apostrophe move container to workspace number $ws4
-bindsym $mod+Shift+parenleft move container to workspace number $ws5
-bindsym $mod+Shift+minus move container to workspace number $ws6
-bindsym $mod+Shift+egrave move container to workspace number $ws7
-bindsym $mod+Shift+underscore move container to workspace number $ws8
-bindsym $mod+Shift+ccedilla move container to workspace number $ws9
-bindsym $mod+Shift+agrave move container to workspace number $ws10
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -167,8 +164,8 @@ smart_gaps on
 smart_borders on
 
 # bindsym media 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 2
-bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 2
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
 bindsym XF86AudioMute exec --no-startup-id pamixer -t
 
 # bindsym brightness
@@ -178,8 +175,26 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s $(( $(brightn
 # bindsym printscreen
 bindsym --release $mod+p exec --no-startup-id $HOME/.local/bin/screenshot
 
+set $locker i3lock -d --image=/home/tbiasutt/Pictures/Wallpapers/lock.png --nofork
+
+# Power mode
+mode "power" {
+    bindsym l exec $locker, mode default
+
+    bindsym Shift+H exec $locker && systemctl hibernate, mode default
+    bindsym Shift+R exec systemctl reboot
+    bindsym Shift+P exec systemctl poweroff
+
+    bindsym Return mode default
+    bindsym Escape mode default
+}
+# Lock creen
+bindsym $mod+Escape mode power
+
 # Startup launch
 ## picom
 exec --no-startup-id picom --daemon
-## autorandr
-exec_always --no-startup-id autorandr -c --force
+## autorandr & polybar
+exec_always --no-startup-id "autorandr -c --force && /home/tbiasutt/.config/polybar/launch.sh"
+## keymap
+exec_always --no-startup-id setxkbmap us_qwerty-fr
